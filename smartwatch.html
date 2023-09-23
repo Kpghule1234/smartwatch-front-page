@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> smartwatch basic </title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- fontawesome  -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <!-- google font  -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+  </head>
+<style>
+    body
+{
+  margin: 0;
+  font-family: 'Noto Sans SC', sans-serif;
+  background: linear-gradient(red,black);
+}
+header
+{
+  text-align: center;
+  
+  background:linear-gradient(rgb(4, 2, 34), rgb(221, 224, 221));
+  
+}
+#amazon
+{
+  width: 120px;
+}
+#container
+{
+  display: flex;
+  flex-direction: row;
+  padding-left: 300px;
+  padding-top: 100px;
+  margin: auto;
+}
+#watch
+{
+  position: relative;
+  text-align: center;
+}
+#currentTime
+{
+  color: white;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+#heartRate
+{
+  position: absolute;
+  text-align: center;
+  display: none;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#hbNumber
+{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+}
+#heartRate i
+{
+  color: red;
+  font-size: 40px;
+  animation: heartBeat .40s infinite alternate;
+}
+@keyframes heartBeat
+{
+  to { transform: scale(1.4); }
+}
+
+#watchImage
+{
+  width: 420px;
+}
+#aboutWatch
+{
+  width: 50%;
+}
+p
+{ 
+  font-size: 14px; 
+  line-height: 25px;
+}
+
+button
+{
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+#black, #peach, #blue, #purple
+{
+  height: 35px;
+  width: 50px;
+  display: inline-block;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+#black
+{
+  background-color: black;
+}
+#peach
+{
+  background-color: rgb(230, 73, 42);
+}
+#blue
+{
+  background-color:rgb(73, 72, 117);
+}
+#purple
+{
+  background-color:rgb(139, 80, 96);
+}
+#showTime
+{
+  padding: 9px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-right: 15px;
+}   
+#showHeartBeat
+{
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+#buyNow
+{
+  padding: 18px 38px;
+  border-radius: 5px;
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: rgb(209, 145, 26);
+  color: black;
+}
+
+
+@media(max-width: 1196px)
+{
+  h1
+  {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  p
+  {
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 1500px)
+{
+  #container
+  {
+    padding-left: 200px;
+  }
+}
+
+@media(max-width: 1200px)
+{
+  #currentTime
+  {
+    top: 46%;
+  }
+}
+
+
+@media(max-width: 1000px)
+{
+  #container
+  {
+    padding-left: 100px;
+    padding-right: 50px;
+  }
+  #currentTime
+  {
+    top: 45%;
+  }
+}
+@media(max-width: 880px)
+{
+  #container
+  {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media(max-width: 860px)
+{
+  #container
+  {
+    text-align: center;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 35%;
+    color: white;
+  }
+
+  #currentTime
+  {
+    top: 48%;
+  }
+  #heartRate 
+  {
+    top: 50%;
+    left: 50%;
+  }
+  #hbNumber
+  {
+    font-size: 26x;
+  }
+  #heartRate i
+  {
+    color: red;
+    font-size: 38px;
+  }
+  #aboutWatch
+  {
+    margin: auto;
+    width: 70%;
+  }
+ 
+  #selector, #feature
+  {
+    text-align: center;
+  }
+  
+  #table 
+  {
+    display:table;    
+  }
+  #para 
+  {
+    display:table-footer-group;
+
+  }
+  #selector 
+  {
+    display:table-header-group;
+    
+  }
+  #feature 
+  {
+    display:table-row-group;
+  }
+}
+@media(max-width: 644px)
+{
+  #heartRate 
+  {
+    top: 50%;
+    left: 50%;
+  }
+  #currentTime
+  {
+    top: 48%;
+  }
+}
+@media(max-width: 676px)
+{
+  #aboutWatch
+  {
+    width: 90%;
+   
+  }
+}
+@media(max-width: 524px)
+{
+  #watchImage
+  {
+    width: 350px;
+  }
+  #currentTime
+  {
+    font-size: 22px;
+  }
+  #heartRate 
+  {
+    top: 50%;
+    left: 50%;
+  }  
+}
+@media(max-width: 456px)
+{
+  #container
+  {
+    padding-top: 10px;
+  }
+  #watchImage
+  {
+    width: 240px;
+  }
+  #currentTime
+  {
+    font-size: 15px;
+  }
+  #black, #peach, #blue, #purple
+  {
+    height: 25px;
+    width: 28px;
+    margin-right: 10px;
+  }
+  #buyNow
+  {
+    padding: 12px 28px;
+    background-color: red;
+  }
+  #heartRate i
+  {
+    font-size: 26px;
+  }
+  #heartRate 
+  {
+    top: 50%;
+    left: 50%;
+  }
+  #hbNumber
+  {
+    font-size: 14px;
+  }
+  h1, h2
+  {
+    font-size: 17px;
+  }
+  
+  p > i
+  {
+    font-weight: 600;
+  }
+
+}
+#second{
+    height: 250px;
+    width: 200px;
+    cursor: pointer;
+    border: 5px solid #f00808;
+    box-shadow: 5px 5px 10px rgba(50, 45, 34, 32.3);
+  
+
+}
+#para1{
+    color: white;
+    padding-left: 30px;
+    font-size: 16px;
+}
+h1{
+    padding-left: 30px;
+  color: white;
+    background: linear-gradient(red,black);
+    border-radius: 10px;
+}
+h2{
+    padding-left: 30px;
+    color:rgb(175, 209, 23);
+}
+#black{
+    margin-left: 5%;
+}
+
+</style>
+<script>
+    // STORING ALL THE REQUIRED DATA FROM THE HTML ID's
+
+let blackTheme = "https://rukminim2.flixcart.com/image/416/416/xif0q/smartwatch/h/x/z/1-83-bsw026-android-ios-fire-boltt-no-original-imagg6kh4mn6szrp.jpeg?q=70";
+let peachTheme = "https://rukminim2.flixcart.com/image/416/416/xif0q/smartwatch/d/r/b/-original-imagkfm8hs5yjjz6.jpeg?q=70";
+let blueTheme = "https://rukminim2.flixcart.com/image/416/416/xif0q/smartwatch/u/o/i/-original-imagg7k99qqrutsb.jpeg?q=70";
+let purpleTheme = "https://rukminim2.flixcart.com/image/416/416/xif0q/smartwatch/f/f/q/-original-imagg7k9ktmaqhjr.jpeg?q=70";
+
+let watch = document.getElementById('watchImage')
+
+let black = document.getElementById('black')
+let peach = document.getElementById('peach')
+let blue = document.getElementById('blue')
+let purlpe = document.getElementById('purlpe')
+
+
+// COLOR CHANGE
+
+if(watch != null)
+{
+  black.onclick = function() 
+  {
+    watch.src = blackTheme;
+  }
+}
+if(watch != null)
+{
+  peach.onclick = function() 
+  {
+    watch.src = peachTheme;
+  }
+}
+if(watch != null)
+{
+  blue.onclick = function() 
+  {
+    watch.src = blueTheme;
+  }
+}
+if(watch != null)
+{
+  purple.onclick = function() 
+  {
+    watch.src = purpleTheme;
+  }
+}
+
+
+// COLOR CHANGE
+
+if(watch != null)
+{
+  black.onclick = function() 
+  {
+    watch.src = blackTheme;
+  }
+}
+if(watch != null)
+{
+  peach.onclick = function() 
+  {
+    watch.src = peachTheme;
+  }
+}
+if(watch != null)
+{
+  blue.onclick = function() 
+  {
+    watch.src = blueTheme;
+  }
+}
+if(watch != null)
+{
+  purple.onclick = function() 
+  {
+    watch.src = purpleTheme;
+  }
+}
+
+
+// CURRENT TIME
+
+function time () 
+{
+  var today = new Date()
+  document.getElementById('currentTime').innerHTML = today.getHours() +":"+ today.getMinutes() +":"+ today.getSeconds()
+  setTimeout(function(){time()}, 1000)
+}
+time();
+
+
+// HEARTBEAT DETAILS
+
+let heartBeatBtn = document.getElementById('showHeartBeat')
+let heartBeatRate = document.getElementById('heartRate')
+
+
+// TIME DETAILS
+
+let showTimeBtn = document.getElementById('showTime')
+let showCurrrentTime = document.getElementById('currentTime')
+
+
+heartBeatBtn.onclick = function()
+{
+  heartBeatRate.style.display = 'block'
+  showCurrrentTime.style.display = 'none'
+}
+
+showTimeBtn.onclick = function()
+{
+  heartBeatRate.style.display = 'none'
+  showCurrrentTime.style.display = 'block'
+}
+
+// random heart beat rate
+
+let randomNum = document.getElementById('hbNumber')
+
+function randomNumber () 
+{
+  randomNum.innerHTML = Math.floor(Math.random() * 51) + 80
+  console.log(randomNum.innerHTML)
+}
+randomNumber();
+</script>
+  <body>
+    <!-- header -->
+    <header>
+      <a href="#"><img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png" alt="amazon" id="amazon"></a>
+      <!--       <a href="#"><img alt="amazon" id="amazon"></a> -->
+    </header>
+
+    <div id="container">
+      <!-- watch image section -->
+      <div id="watch">
+        <div id="currentTime"></div>
+        <div id="heartRate">
+          <!-- fontawesome heart  -->
+          <i class="fas fa-heartbeat"></i>
+          <p id="hbNumber"></p>
+        </div>
+        <img  id="second"src="/1k-transformed.jpg">
+      </div>
+
+      <!-- about watch section -->
+      <div id="aboutWatch">
+
+        <!-- heading  -->
+        <h1> Nois Smart Watch </h1>
+
+        <div id="table">
+          <div id= "para">
+            <p id="para1">   Get it for Better Understanding of Fitness Level and Improvement Areas. Heart Rate Tracking, Touchscreen. <br> <i><B> 1 Year Warranty Provided by the Manufacturer from Date of Purchase.</B> </i> </p>
+          </div>
+
+          <!-- image selector  -->
+          <div id="selector">
+            <h2> Select Color </h2>
+            <button id="black"></button>
+            <button id="peach"></button>
+            <button id="blue"></button>
+            <button id="purple"></button>
+          </div>
+
+          <!-- features  -->
+          <div id="feature">
+            <h2> Features </h2>
+            <button id="showTime"> Time </button>
+            <button id="showHeartBeat"> Heart Rate </button>
+          </div>
+        </div>
+
+        <!-- buy now button -->
+        <div class="buyNow">
+          <button id="buyNow"> BUY NOW </button>
+        </div>
+      </div>
+
+    </div>
+    <script src="watch.js" type="text/javascript"></script>
+  </body>
+</html>
